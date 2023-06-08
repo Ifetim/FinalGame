@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://New Piskel (3).png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -26,3 +27,5 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 scale = Vector2( 1.8, 1.8 )
 shape = SubResource( 2 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
