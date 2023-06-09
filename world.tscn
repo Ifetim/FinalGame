@@ -12,6 +12,7 @@
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 112, 173 )
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Godot" type="Sprite" parent="Player"]
@@ -29,3 +30,5 @@ scale = Vector2( 1.8, 1.8 )
 shape = SubResource( 2 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
