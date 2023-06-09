@@ -92,23 +92,16 @@ func fire_bullet():
 #
 #	# Add the bullet to the scene
 	get_tree().get_root().add_child(bulletinstance)
-#
-
 
 func kill():
-	position= Vector2(0,0)
 	get_tree().reload_current_scene()
 
-
-
-
 	
-
-	 # Replace with function body.
-
-
-
+	
 func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:
 		kill()
 		
+
+
+	
