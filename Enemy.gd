@@ -1,34 +1,20 @@
 extends KinematicBody2D
+
 var motion = Vector2()
+const FOLLOW_SPEED = 70
+var follow_player = true
 
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
+func _physics_process(delta: float) -> void:
+	if follow_player:
+		var player = get_parent().get_node("Player")
+		position += (player.position - position) / FOLLOW_SPEED
+		look_at(player.position)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func _physics_process(delta):
-	var Player = get_parent().get_node("Player")
-	position += (Player.position - position)/70
-	
-	look_at(Player.position)
-	
 	move_and_collide(motion)
-	
-	
-
 
 func _on_Area2D_body_entered(body):
 	if 'bullet' in body.name:
 		queue_free()
-	 # Replace with function body.
