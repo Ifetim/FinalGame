@@ -4,6 +4,7 @@ var SPEED := 300.0
 const BULLETSPEED = 1000
 var bullet = preload("res://bullet.tscn")
 
+
 var isPotionActive = false
 const POTION_DURATION = 3.0
 var potionTimer = Timer.new()
@@ -96,8 +97,17 @@ func speed_boost(boostFactor: float, duration: float) -> void:
 	yield(get_tree().create_timer(duration), "timeout")
 	SPEED /= boostFactor
 
+
 func _on_PotionTimer_timeout() -> void:
 	isPotionActive = false
 
 func update_health_bar():
-	healthBar.value = health
+	healthBar.set_value(health)
+
+
+#func _on_HealthPotion_body_entered(body):
+#	if body.name == "Player":
+#		var healthPotion = body as HealthPotion
+#		health += healthPotion.healingAmount
+#		update_health_bar()
+#		healthPotion.queue_free()
