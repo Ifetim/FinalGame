@@ -1,5 +1,5 @@
-
 extends KinematicBody2D
+
 var SPEED := 300.0
 const BULLETSPEED = 1000
 var bullet = preload("res://bullet.tscn")
@@ -8,13 +8,19 @@ var isPotionActive = false
 const POTION_DURATION = 3.0
 var potionTimer = Timer.new()
 
+var health = 100 
+
+onready var healthBar := get_node("/root/world/ProgressBar")
+
+  # Replace "ProgressBar" with the actual path to your ProgressBar node
+
 const DIRECTION_TO_FRAME := {
 	Vector2.DOWN: 0,
 	Vector2.DOWN + Vector2.RIGHT: 1,
 	Vector2.RIGHT: 2,
 	Vector2.UP + Vector2.RIGHT: 3,
 	Vector2.UP: 4,
-}
+	}
 
 onready var sprite := $Godot
 
@@ -31,18 +37,13 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("LMB"):
 		fire_bullet()
-	
-	if direction.length_squared() > 0.0:
-		direction = direction.normalized()
-		move_and_slide(direction * SPEED)
-
 
 	if isPotionActive:
 		direction = Vector2.ZERO
 
-#	var velocity := direction * SPEED
-#	direction = direction.normalized()
-#	move_and_slide(velocity)
+	var velocity := direction * SPEED
+	direction = direction.normalized()
+	move_and_slide(velocity)
 	look_at(get_global_mouse_position())
 
 	Vector2.round()
@@ -79,10 +80,15 @@ func fire_bullet():
 	bulletTimer.start()
 
 func kill():
+	health = 0  # Reduce health to zero
+	update_health_bar()
 	get_tree().reload_current_scene()
 
 func _on_Area2D_body_entered(body):
 	if "Enemy" in body.name:
+		health -= 10
+		update_health_bar()
+	if health <= 0:
 		kill()
 
 func speed_boost(boostFactor: float, duration: float) -> void:
@@ -92,4 +98,6 @@ func speed_boost(boostFactor: float, duration: float) -> void:
 
 func _on_PotionTimer_timeout() -> void:
 	isPotionActive = false
-#make 8 way movement only show chnaged code
+
+func update_health_bar():
+	healthBar.value = health

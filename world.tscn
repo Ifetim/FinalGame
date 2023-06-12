@@ -49,7 +49,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1920, 728 )
-scale = Vector2( 12.65, 5.65 )
+scale = Vector2( 13.65, 5.65 )
 z_index = -11
 texture = ExtResource( 5 )
 
@@ -58,6 +58,14 @@ position = Vector2( 228, 320 )
 
 [node name="InvisibilityPotion" parent="." instance=ExtResource( 7 )]
 position = Vector2( 160, 200 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 688.0
+margin_top = 424.0
+margin_right = 692.0
+margin_bottom = 438.0
+rect_scale = Vector2( 2.19321, 2.05124 )
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="InvisibilityPotion" to="Player" method="_on_InvisibilityPotion_body_entered"]
