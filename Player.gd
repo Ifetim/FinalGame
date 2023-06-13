@@ -5,13 +5,19 @@ const BULLETSPEED = 1000
 var bullet = preload("res://bullet.tscn")
 
 
+signal potion_picked_up
+
+
 var isPotionActive = false
 const POTION_DURATION = 3.0
 var potionTimer = Timer.new()
 
 var health = 100 
 
-onready var healthBar := get_node("/root/world/ProgressBar")
+onready var healthBar := get_node("/root/world/Control/CanvasLayer/ProgressBar")
+
+onready var enemy := get_node("/root/world/Enemy")
+signal PotionPickedUp
 
   # Replace "ProgressBar" with the actual path to your ProgressBar node
 
@@ -98,11 +104,14 @@ func speed_boost(boostFactor: float, duration: float) -> void:
 	SPEED /= boostFactor
 
 
+
 func _on_PotionTimer_timeout() -> void:
 	isPotionActive = false
 
 func update_health_bar():
 	healthBar.set_value(health)
+	
+
 
 
 #func _on_HealthPotion_body_entered(body):
@@ -111,3 +120,11 @@ func update_health_bar():
 #		health += healthPotion.healingAmount
 #		update_health_bar()
 #		healthPotion.queue_free()
+
+
+func _on_InvisibilityPotion_body_entered(body):
+	print("jk")
+	if body.is_in_group("player"):
+		print("in")
+		emit_signal("potion_picked_up")
+

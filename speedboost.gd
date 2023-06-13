@@ -3,7 +3,7 @@ extends Area2D
 const SPEED_BOOST = 2.0
 const BOOST_DURATION = 3.0
 
-var player = get_node("/root/Player") as KinematicBody2D
+var player = get_node("/root/world/Player") as KinematicBody2D
 
 func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
 	print('entered')
