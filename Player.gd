@@ -5,7 +5,7 @@ const BULLETSPEED = 1000
 var bullet = preload("res://bullet.tscn")
 
 
-signal potion_picked_up
+
 
 
 var isPotionActive = false
@@ -14,10 +14,10 @@ var potionTimer = Timer.new()
 
 var health = 100 
 
-onready var healthBar := get_node("/root/world/Control/CanvasLayer/ProgressBar")
+onready var healthBar := get_node("/root/world/ProgressBar")
 
 onready var enemy := get_node("/root/world/Enemy")
-signal PotionPickedUp
+
 
   # Replace "ProgressBar" with the actual path to your ProgressBar node
 
@@ -109,22 +109,15 @@ func _on_PotionTimer_timeout() -> void:
 	isPotionActive = false
 
 func update_health_bar():
-	healthBar.set_value(health)
-	
-
-
-
-#func _on_HealthPotion_body_entered(body):
-#	if body.name == "Player":
-#		var healthPotion = body as HealthPotion
-#		health += healthPotion.healingAmount
-#		update_health_bar()
-#		healthPotion.queue_free()
-
+	healthBar.value = health
 
 func _on_InvisibilityPotion_body_entered(body):
-	print("jk")
 	if body.is_in_group("player"):
-		print("in")
-		emit_signal("potion_picked_up")
+	# Stop the enemy from following the player
+		var enemy = get_node("/root/world/Enemy")
+		enemy.stop_following_player()
+	# Start a timer to resume following after 3 seconds
+		potionTimer.start()
+
+	# Remove the invisibility potion from the scene
 
