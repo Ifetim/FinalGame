@@ -1,15 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://kenney_tiny-dungeon/Tiles/tile_0113.png" type="Texture" id=1]
+[ext_resource path="res://Invisibility.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5, 6.5 )
 
-[node name="InvisibilityPotion" type="Area2D"]
+[node name="Sprite" type="Sprite"]
+scale = Vector2( 25, 25 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="InvisibilityPotion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibilityPotion"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )

@@ -1,4 +1,4 @@
-extends Area2D
+extends Sprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,8 +9,6 @@ func _ready():
 #    pass
 
 
-
-		
 
 
 func _on_InvisibilityPotion_body_entered(body):

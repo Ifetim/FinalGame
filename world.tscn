@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Invisibility.gd" type="Script" id=2]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprite/New Piskel (7).png" type="Texture" id=5]
@@ -20,36 +19,109 @@ bg_color = Color( 1, 0, 0, 1 )
 [node name="world" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 376, 367 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 64, 56 )
+position = Vector2( 4862, 319 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 64, 56 )
-scale = Vector2( 1.28, 1.28 )
+position = Vector2( 3607, 671 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 64, 56 )
-scale = Vector2( 1.28, 1.28 )
+position = Vector2( 2605, 294 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 64, 56 )
-scale = Vector2( 1.28, 1.28 )
+position = Vector2( 2027, 100 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 165, 1117 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 422, 632 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 151, 130 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3349, 2590 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1617, 2043 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1274, 1418 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 454, 1756 )
+
+[node name="Enemy12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1775, 1238 )
+
+[node name="Enemy13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3802, 1694 )
+
+[node name="Enemy14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2126, 648 )
+
+[node name="Enemy15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4312, 1671 )
+
+[node name="Enemy16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4152, 2339 )
+
+[node name="Enemy17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3535, 2597 )
+
+[node name="Enemy18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1361, 290 )
+
+[node name="Enemy19" parent="." instance=ExtResource( 3 )]
+position = Vector2( 657, 769 )
+
+[node name="Enemy20" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1226, 775 )
+
+[node name="Enemy21" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3438, 2986 )
+
+[node name="Enemy22" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1657, 2600 )
+
+[node name="Enemy23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2494, 2203 )
+
+[node name="Enemy24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1895, 1768 )
+
+[node name="Enemy25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3112, 1799 )
+
+[node name="Enemy26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2326, 1122 )
+
+[node name="Enemy27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2888, 1054 )
+
+[node name="Enemy28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3961, 1892 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 4012, 1999.37 )
+visible = false
+position = Vector2( 4022, 2026 )
 scale = Vector2( 34.475, 16.8039 )
 z_index = -11
 texture = ExtResource( 5 )
 
 [node name="Speedboost" parent="." instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 228, 320 )
 
 [node name="InvisibilityPotion" parent="." groups=["InviPotion"] instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 160, 200 )
-script = ExtResource( 2 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 8 )]
+visible = false
 position = Vector2( 390, 171 )
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -79,7 +151,3 @@ format = 1
 tile_data = PoolIntArray( 1835178, 1073741824, 0, 3473726, 1073741824, 0, 3473727, 1073741824, 0, 3998399, 1073741824, 0, 4849835, 1073741824, 0, 4849836, 1073741824, 0, 4849837, 1073741824, 0, 4849838, 1073741824, 0, 4849839, 1073741824, 0, 4849840, 1073741824, 0, 4849841, 1073741824, 0, 6357153, 1073741824, 0, 6947425, 1073741824, 0, 7602886, 1073741824, 0, 7733731, 1073741824, 0, 9502763, 1073741824, 0, 9502764, 1073741824, 0, 9502765, 1073741824, 0, 11272421, 1073741824, 0, 11338039, 1073741824, 0, 12517843, 1073741824, 0, 14942750, 1073741824, 0, 15139514, 1073741824, 0, 17564045, 1073741824, 0, 17564046, 1073741824, 0, 17760417, 1073741824, 0, 20251211, 1073741824, 0, 20316873, 1073741824, 0, 20906252, 1073741824, 0, 21692885, 1073741824, 0, 24314228, 1073741824, 0, 24314229, 1073741824, 0, 24314230, 1073741824, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
-
-[connection signal="body_entered" from="InvisibilityPotion" to="Player" method="_on_InvisibilityPotion_body_entered"]
-[connection signal="body_entered" from="InvisibilityPotion" to="InvisibilityPotion" method="_on_InvisibilityPotion_body_entered"]
-[connection signal="body_entered" from="HealthPotion" to="HealthPotion" method="_on_HealthPotion_body_entered"]
