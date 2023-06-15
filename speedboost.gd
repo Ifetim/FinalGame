@@ -3,9 +3,10 @@ extends Sprite
 const SPEED_BOOST = 2.0
 const BOOST_DURATION = 3.0
 
-var player = get_node("world/Player") as KinematicBody2D
+var player = KinematicBody2D
 
-func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
+
+func _on_Speedboost_body_entered(body):
 	print('entered')
 	if body.has_method("speed_boost"):
 		player = body

@@ -14,7 +14,7 @@ var potionTimer = Timer.new()
 
 var health = 100 
 
-onready var healthBar := get_node("/root/world/ProgressBar")
+onready var healthBar := get_node("/root/world/CanvasLayer/ProgressBar")
 
 onready var enemy := get_node("/root/world/Enemy")
 var enemyGroup = []
@@ -95,11 +95,11 @@ func kill():
 	get_tree().reload_current_scene()
 
 func _on_Area2D_body_entered(body):
-#	if "Enemy" in body.name:
-#		health -= 10
-#		update_health_bar()
-#	if health <= 0:
-#		kill()
+	if "Enemy" in body.name:
+		health -= 10
+		update_health_bar()
+	if health <= 0:
+		kill()
 	for enemy in enemyGroup:
 		if body.name == enemy.name:
 			enemy.stop_following_player()
@@ -120,10 +120,15 @@ func speed_boost(boostFactor: float, duration: float) -> void:
 func _on_PotionTimer_timeout() -> void:
 	isPotionActive = false
 
+
 func update_health_bar():
 	healthBar.value = health
 
-func _on_InvisibilityPotion_body_entered(body):
+
+
+
+
+#func _on_InvisibilityPotion_body_entered(body):
 #	if body.is_in_group("player"):
 #	# Stop the enemy from following the player
 #		var enemy = get_node("/root/world/Enemy")
@@ -131,13 +136,13 @@ func _on_InvisibilityPotion_body_entered(body):
 # #Start a timer to resume following after 3 seconds
 #		potionTimer.start()
 #	# Remove the invisibility potion from the scene
-
-	if body.is_in_group("player"):
-		for enemy in enemyGroup:
-			enemy.stop_following_player()
-			var potionTimer = Timer.new()
-			potionTimer.wait_time = 3.0
-			potionTimer.one_shot = true
-			potionTimer.connect("timeout", enemy, "_resume_following_player")
-			enemy.add_child(potionTimer)
-			potionTimer.start()
+#
+#	if body.is_in_group("player"):
+#		for enemy in enemyGroup:
+#			enemy.stop_following_player()
+#			var potionTimer = Timer.new()
+#			potionTimer.wait_time = 3.0
+#			potionTimer.one_shot = true
+#			potionTimer.connect("timeout", enemy, "_resume_following_player")
+#			enemy.add_child(potionTimer)
+#			potionTimer.start()

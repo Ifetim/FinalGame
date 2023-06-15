@@ -49,10 +49,10 @@ position = Vector2( 3349, 2590 )
 position = Vector2( 1617, 2043 )
 
 [node name="Enemy10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1274, 1418 )
+position = Vector2( 1219, 1416 )
 
 [node name="Enemy11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 454, 1756 )
+position = Vector2( 492, 1743 )
 
 [node name="Enemy12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1775, 1238 )
@@ -113,30 +113,13 @@ z_index = -11
 texture = ExtResource( 5 )
 
 [node name="Speedboost" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 228, 320 )
+position = Vector2( -373, 138 )
 
 [node name="InvisibilityPotion" parent="." groups=["InviPotion"] instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 160, 200 )
+position = Vector2( -332, -72 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 8 )]
-visible = false
-position = Vector2( 390, 171 )
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -416.0
-margin_top = -168.0
-margin_right = -373.0
-margin_bottom = -154.0
-rect_scale = Vector2( 2.19321, 2.05124 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 2 )
-percent_visible = false
+position = Vector2( -347, 347 )
 
 [node name="Node" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -151,3 +134,19 @@ format = 1
 tile_data = PoolIntArray( 1835178, 1073741824, 0, 3473726, 1073741824, 0, 3473727, 1073741824, 0, 3998399, 1073741824, 0, 4849835, 1073741824, 0, 4849836, 1073741824, 0, 4849837, 1073741824, 0, 4849838, 1073741824, 0, 4849839, 1073741824, 0, 4849840, 1073741824, 0, 4849841, 1073741824, 0, 6357153, 1073741824, 0, 6947425, 1073741824, 0, 7602886, 1073741824, 0, 7733731, 1073741824, 0, 9502763, 1073741824, 0, 9502764, 1073741824, 0, 9502765, 1073741824, 0, 11272421, 1073741824, 0, 11338039, 1073741824, 0, 12517843, 1073741824, 0, 14942750, 1073741824, 0, 15139514, 1073741824, 0, 17564045, 1073741824, 0, 17564046, 1073741824, 0, 17760417, 1073741824, 0, 20251211, 1073741824, 0, 20316873, 1073741824, 0, 20906252, 1073741824, 0, 21692885, 1073741824, 0, 24314228, 1073741824, 0, 24314229, 1073741824, 0, 24314230, 1073741824, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -104.0
+margin_top = -39.0
+margin_right = -61.0
+margin_bottom = -25.0
+rect_scale = Vector2( 2.19321, 2.05124 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 2 )
+percent_visible = false
