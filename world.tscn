@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FinishLine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TileMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprite/New Piskel (7).png" type="Texture" id=5]
 [ext_resource path="res://new scene.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Invisibility.tscn" type="PackedScene" id=7]
 [ext_resource path="res://HealthPotion.tscn" type="PackedScene" id=8]
 [ext_resource path="res://TileMappp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://wall1.tres" type="TileSet" id=10]
@@ -115,9 +115,6 @@ texture = ExtResource( 5 )
 [node name="Speedboost" parent="." instance=ExtResource( 6 )]
 position = Vector2( -373, 138 )
 
-[node name="InvisibilityPotion" parent="." groups=["InviPotion"] instance=ExtResource( 7 )]
-position = Vector2( -332, -72 )
-
 [node name="HealthPotion" parent="." instance=ExtResource( 8 )]
 position = Vector2( -347, 347 )
 
@@ -134,6 +131,10 @@ format = 1
 tile_data = PoolIntArray( 1835178, 1073741824, 0, 3473726, 1073741824, 0, 3473727, 1073741824, 0, 3998399, 1073741824, 0, 4849835, 1073741824, 0, 4849836, 1073741824, 0, 4849837, 1073741824, 0, 4849838, 1073741824, 0, 4849839, 1073741824, 0, 4849840, 1073741824, 0, 4849841, 1073741824, 0, 6357153, 1073741824, 0, 6947425, 1073741824, 0, 7602886, 1073741824, 0, 7733731, 1073741824, 0, 9502763, 1073741824, 0, 9502764, 1073741824, 0, 9502765, 1073741824, 0, 11272421, 1073741824, 0, 11338039, 1073741824, 0, 12517843, 1073741824, 0, 14942750, 1073741824, 0, 15139514, 1073741824, 0, 17564045, 1073741824, 0, 17564046, 1073741824, 0, 17760417, 1073741824, 0, 20251211, 1073741824, 0, 20316873, 1073741824, 0, 20906252, 1073741824, 0, 21692885, 1073741824, 0, 24314228, 1073741824, 0, 24314229, 1073741824, 0, 24314230, 1073741824, 0 )
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
+
+[node name="FinishLine" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4133, 2642 )
+scale = Vector2( 3.84, 1.02766 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

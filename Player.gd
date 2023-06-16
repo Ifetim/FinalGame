@@ -5,14 +5,12 @@ const BULLETSPEED = 1000
 var bullet = preload("res://bullet.tscn")
 
 
-
-
-
 var isPotionActive = false
 const POTION_DURATION = 3.0
 var potionTimer = Timer.new()
 
 var health = 100 
+
 
 onready var healthBar := get_node("/root/world/CanvasLayer/ProgressBar")
 
@@ -31,6 +29,9 @@ const DIRECTION_TO_FRAME := {
 	}
 
 onready var sprite := $Godot
+
+var enemyTouchTimer = Timer.new()
+const ENEMY_TOUCH_DAMAGE_INTERVAL = 1.0
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO
@@ -62,7 +63,13 @@ func _ready():
 	potionTimer.connect("timeout", self, "_on_PotionTimer_timeout")
 	add_child(potionTimer)
 	potionTimer.wait_time = POTION_DURATION
-	potionTimer.one_shot = true	
+	potionTimer.one_shot = true
+	
+	enemyTouchTimer.wait_time = ENEMY_TOUCH_DAMAGE_INTERVAL
+	enemyTouchTimer.one_shot = false
+	enemyTouchTimer.connect("timeout", self, "_on_EnemyTouchTimer_timeout")
+	add_child(enemyTouchTimer)
+	
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		enemyGroup.append(enemy)
 
@@ -95,54 +102,29 @@ func kill():
 	get_tree().reload_current_scene()
 
 func _on_Area2D_body_entered(body):
+	print(body)
 	if "Enemy" in body.name:
 		health -= 10
 		update_health_bar()
 	if health <= 0:
 		kill()
-	for enemy in enemyGroup:
-		if body.name == enemy.name:
-			enemy.stop_following_player()
-			var potionTimer = Timer.new()
-			potionTimer.wait_time = 3.0
-			potionTimer.one_shot = true
-			potionTimer.connect("timeout", enemy, "_resume_following_player")
-			enemy.add_child(potionTimer)
-			potionTimer.start()
-			
+		
+
 func speed_boost(boostFactor: float, duration: float) -> void:
 	SPEED *= boostFactor
 	yield(get_tree().create_timer(duration), "timeout")
 	SPEED /= boostFactor
 
-
-#
-func _on_PotionTimer_timeout() -> void:
-	isPotionActive = false
-
-
 func update_health_bar():
 	healthBar.value = health
 
+func _on_EnemyTouchTimer_timeout():
+	if enemy.is_colliding():
+		health -= 1
+		update_health_bar()
+
+func _on_PotionTimer_timeout():
+	isPotionActive = false
 
 
 
-
-#func _on_InvisibilityPotion_body_entered(body):
-#	if body.is_in_group("player"):
-#	# Stop the enemy from following the player
-#		var enemy = get_node("/root/world/Enemy")
-#		enemy.stop_following_player()
-# #Start a timer to resume following after 3 seconds
-#		potionTimer.start()
-#	# Remove the invisibility potion from the scene
-#
-#	if body.is_in_group("player"):
-#		for enemy in enemyGroup:
-#			enemy.stop_following_player()
-#			var potionTimer = Timer.new()
-#			potionTimer.wait_time = 3.0
-#			potionTimer.one_shot = true
-#			potionTimer.connect("timeout", enemy, "_resume_following_player")
-#			enemy.add_child(potionTimer)
-#			potionTimer.start()

@@ -1,7 +1,6 @@
 extends Sprite
 
 export var healingAmount: int = 25
-
 func _on_HealthPotion_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		if body.health <= 80:
@@ -13,13 +12,7 @@ func _on_HealthPotion_body_entered(body: Node) -> void:
 		else:
 			body.healthBar.value = body.health
 		queue_free()
-#	if body.is_in_group("player"):
-#		if body.health < 100:
-#			body.health += healingAmount
-#			if body.health > 100:
-#				body.health = 100
-#		body.update_health_bar()
-#		queue_free()
+
 
 
 

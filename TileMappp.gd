@@ -2,7 +2,7 @@ extends Node2D
 
 const ROCKS := [
 	preload("res://HealthPotion.tscn"),
-	preload("res://Invisibility.tscn"),
+#	preload("res://Invisibility.tscn"),
 	preload("res://new scene.tscn")
 ]
 
@@ -28,7 +28,7 @@ func add_rocks_on_grid() -> void:
 		var available_space := mask.cell_size - rock_size
 		var random_offset := Vector2(randf(), randf()) * available_space
 		#rock.position = mask.position + mask.map_to_world(cell) #+ random_offset
-		rock.position = mask.map_to_world(cell)
+		rock.position = mask.map_to_world(cell) + mask.position + random_offset
 		print(cell)
 		print(rock.position)
 	
