@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://PlayerLevel2.gd" type="Script" id=1]
 [ext_resource path="res://sprite/New Piskel (3).png" type="Texture" id=2]
+[ext_resource path="res://spot.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,5 +31,12 @@ shape = SubResource( 2 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 smoothing_enabled = true
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 7, 7 )
+texture = ExtResource( 3 )
+color = Color( 0.956863, 0.137255, 0.807843, 1 )
+energy = 0.5
+shadow_enabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

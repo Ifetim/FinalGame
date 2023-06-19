@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprite/Finish-Line-PNG-HD.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Area2D
+
+onready var finish_area := get_node(\"/root/Level2/FinishLine\")
+onready var player := get_node(\"/root/Level2/Player\")
+
+func _ready() -> void:
+	pass
+
+func finish_game() -> void:
+	set_process(false)
+	player.set_physics_process(false)
+	get_tree().change_scene(\"res://Level1.tscn\")
+	
+	
+# We can't directly connect the body_entered signal to the finish_game()
+
+# function because the body_entered signal requires a callback with a `body`
+
+# parameter.
+
+# That's why we need this function.
+func _on_FinishLine_body_entered(body):
+	print(body)
+	if \"Player\" in body.name:
+		finish_game()
+
+	# We ensure that the aabel is visible.
+
+	
+	
+
+
+
+
+
+
+
+
+
+# We can't directly connect the body_entered signal to the finish_game()
+
+# function because the body_entered signal requires a callback with a `body`
+
+# parameter.
+
+# That's why we need this function.
+
+
+
+
+
+
+
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 263.5, 20 )
+
+[node name="FinishLine" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 176, 528, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_FinishLine_body_entered"]

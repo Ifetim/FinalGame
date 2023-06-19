@@ -5,11 +5,13 @@ const FOLLOW_SPEED = 60
 var follow_player = true
 
 var follow_timer = Timer.new()
-const FOLLOW_DISTANCE = 500
+const FOLLOW_DISTANCE = 700
 
 var player = null
-var playerScore = null 
+var shotsCount = 0 
+var playerScore = 0
 signal enemy_killed
+
 
 func _ready():
 	pass
@@ -17,16 +19,15 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	var player = get_parent().get_node("Player")
 	if player:
-		var distance = position.distance_to(player.position)
-		if follow_player and distance <= FOLLOW_DISTANCE:
-			position += (player.position - position) / FOLLOW_SPEED
-			look_at(player.position)	
-		elif distance <= FOLLOW_DISTANCE:
-			follow_player = true
+		position += (player.position - position) / FOLLOW_SPEED
+		look_at(player.position)
 	move_and_collide(motion)
-	
+
 
 func _on_Area2D_body_entered(body):
 	if 'bullet' in body.name:
-		emit_signal("enemy_killed")
-		queue_free()
+		shotsCount += 1
+		if shotsCount >= 2:
+			print("killed")
+			emit_signal("enemy_killed")
+			queue_free()

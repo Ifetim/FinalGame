@@ -1,7 +1,7 @@
 extends Sprite
 
-const SPEED_BOOST = 2.0
-const BOOST_DURATION = 3.0
+const SPEED_BOOST = 1.7
+const BOOST_DURATION = 2.0
 
 var player = KinematicBody2D
 

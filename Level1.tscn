@@ -1,0 +1,268 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Moving1.tres" type="Animation" id=1]
+[ext_resource path="res://TileMappp.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EnemyNF.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://FinishLine.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprite/New Piskel (6).png" type="Texture" id=7]
+[ext_resource path="res://sprite/New Piskel (7).png" type="Texture" id=8]
+[ext_resource path="res://Moving3.tres" type="Animation" id=9]
+[ext_resource path="res://Moving2.tres" type="Animation" id=10]
+[ext_resource path="res://Ui.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player.gd" type="Script" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 160 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Anim2"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../KinematicBody2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3450, 2451 ), Vector2( 3450, 2403 ), Vector2( 3450, 2303 ), Vector2( 3450, 2452 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1907, 1134 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Moving1"
+length = 4.0
+loop = true
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1896, 1134 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Anim3"
+
+[sub_resource type="Animation" id=8]
+resource_name = "Moving1"
+length = 4.0
+loop = true
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2900, 1780 ) ]
+}
+
+[node name="Level1" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 376, 367 )
+script = ExtResource( 12 )
+
+[node name="Enemy" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 4862, 319 )
+
+[node name="Enemy2" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 3607, 671 )
+
+[node name="Enemy3" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2605, 294 )
+
+[node name="Enemy4" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2027, 100 )
+
+[node name="Enemy5" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 165, 1117 )
+
+[node name="Enemy6" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 422, 632 )
+
+[node name="Enemy7" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 151, 130 )
+
+[node name="Enemy8" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 3349, 2590 )
+
+[node name="Enemy9" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1617, 2043 )
+
+[node name="Enemy10" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1219, 1416 )
+
+[node name="Enemy11" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 492, 1743 )
+
+[node name="Enemy12" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1775, 1238 )
+
+[node name="Enemy13" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 3802, 1694 )
+
+[node name="Enemy14" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2126, 648 )
+
+[node name="Enemy15" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 4312, 1671 )
+
+[node name="Enemy16" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 4152, 2339 )
+
+[node name="Enemy17" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 4686, 1134 )
+
+[node name="Enemy18" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1361, 290 )
+
+[node name="Enemy19" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 657, 769 )
+
+[node name="Enemy20" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1226, 775 )
+
+[node name="Enemy21" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 3337, 1250 )
+
+[node name="Enemy22" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1373, 1904 )
+
+[node name="Enemy23" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2494, 2203 )
+
+[node name="Enemy24" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 1895, 1768 )
+
+[node name="Enemy25" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2852, 2031 )
+
+[node name="Enemy26" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2326, 1122 )
+
+[node name="Enemy27" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 2888, 1054 )
+
+[node name="Enemy28" parent="." groups=["enemies"] instance=ExtResource( 5 )]
+position = Vector2( 3961, 1892 )
+
+[node name="emenyNF" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 2511, 260 )
+
+[node name="emenyNF2" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 1736, 2551 )
+
+[node name="emenyNF3" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 4418, 1672 )
+
+[node name="emenyNF4" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 4754, 352 )
+
+[node name="emenyNF5" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 2978, 1072 )
+
+[node name="emenyNF6" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 2682, 2623 )
+
+[node name="emenyNF7" parent="." groups=["enemies"] instance=ExtResource( 3 )]
+position = Vector2( 3050, 2143 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2442, 1326 )
+scale = Vector2( 22.7875, 12.9082 )
+z_index = -11
+texture = ExtResource( 8 )
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+
+[node name="FinishLine" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4133, 2642 )
+scale = Vector2( 2.4, 1 )
+collision_layer = 1
+collision_mask = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 11 )]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 1907, 1134 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+autoplay = "Moving1"
+anims/Anim2 = SubResource( 4 )
+anims/Moving1 = ExtResource( 1 )
+anims/RESET = SubResource( 3 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+position = Vector2( 1896, 1134 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D2"]
+autoplay = "Moving2"
+anims/Moving1 = SubResource( 5 )
+anims/Moving2 = ExtResource( 10 )
+anims/RESET = SubResource( 6 )
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="."]
+position = Vector2( 2900, 1780 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D3"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D3"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D3"]
+autoplay = "Moving3"
+anims/Anim3 = SubResource( 7 )
+anims/Moving1 = SubResource( 8 )
+anims/Moving3 = ExtResource( 9 )
+anims/RESET = SubResource( 9 )

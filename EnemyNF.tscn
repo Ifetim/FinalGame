@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://EnemyNF.gd" type="Script" id=1]
 [ext_resource path="res://sprite/New Piskel (4).png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.6, 9.6 )
@@ -9,7 +11,9 @@ extents = Vector2( 9.6, 9.6 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9.95954, 9.95955 )
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="emenyNF" type="KinematicBody2D"]
+modulate = Color( 0.141176, 1, 0, 1 )
+material = SubResource( 3 )
 position = Vector2( 42, 24 )
 scale = Vector2( 1.28, 1.28 )
 script = ExtResource( 1 )

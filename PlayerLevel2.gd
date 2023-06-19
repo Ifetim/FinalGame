@@ -13,8 +13,8 @@ var potionTimer = Timer.new()
 var health = 100 
 var playerScore = 0 
 
-onready var healthBar := get_node("/root/Level1/CanvasLayer/ProgressBar")
-onready var enemy := get_node("/root/Level1/Enemy")
+onready var healthBar := get_node("/root/Level2/CanvasLayer/ProgressBar")
+onready var enemy := get_node("/root/Level2/Enemy")
 var enemyGroup = []
 
 var bulletCooldown = 0.5  # Cooldown time between bullets
@@ -35,7 +35,7 @@ const DIRECTION_TO_FRAME := {
 	}
 
 onready var sprite := $Godot
-onready var label := get_node("/root/Level1/CanvasLayer/Label")
+onready var label := get_node("/root/Level2/CanvasLayer/Label")
 
 var enemyTouchTimer = Timer.new()
 const ENEMY_TOUCH_DAMAGE_INTERVAL = 1.0
