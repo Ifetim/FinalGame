@@ -33,7 +33,7 @@ zoom = Vector2( 1.5, 1.5 )
 smoothing_enabled = true
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 7, 7 )
+scale = Vector2( 5.43791, 4.64638 )
 texture = ExtResource( 3 )
 color = Color( 0.956863, 0.137255, 0.807843, 1 )
 energy = 0.5

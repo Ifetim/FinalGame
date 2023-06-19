@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Moving1.tres" type="Animation" id=1]
 [ext_resource path="res://TileMappp.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Moving2.tres" type="Animation" id=10]
 [ext_resource path="res://Ui.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Player.gd" type="Script" id=12]
+[ext_resource path="res://CVLA.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 160 )
@@ -264,5 +265,8 @@ shape = SubResource( 1 )
 autoplay = "Moving3"
 anims/Anim3 = SubResource( 7 )
 anims/Moving1 = SubResource( 8 )
+anims/Moving2 = ExtResource( 10 )
 anims/Moving3 = ExtResource( 9 )
 anims/RESET = SubResource( 9 )
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 13 )]

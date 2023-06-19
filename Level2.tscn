@@ -248,6 +248,7 @@ autoplay = "MOving6"
 anims/Anim2 = SubResource( 4 )
 anims/MOving6 = ExtResource( 14 )
 anims/Moving1 = ExtResource( 8 )
+anims/Moving3 = ExtResource( 10 )
 anims/Moving4 = ExtResource( 13 )
 anims/Moving5 = ExtResource( 15 )
 anims/RESET = SubResource( 3 )
@@ -264,8 +265,10 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D2"]
 autoplay = "Moving2"
+anims/MOving6 = ExtResource( 14 )
 anims/Moving1 = SubResource( 5 )
 anims/Moving2 = ExtResource( 11 )
+anims/Moving5 = ExtResource( 15 )
 anims/RESET = SubResource( 6 )
 
 [node name="KinematicBody2D3" type="KinematicBody2D" parent="."]
@@ -281,6 +284,7 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D3"]
 autoplay = "Moving3"
 anims/Anim3 = SubResource( 7 )
+anims/MOving6 = ExtResource( 14 )
 anims/Moving1 = SubResource( 8 )
 anims/Moving3 = ExtResource( 10 )
 anims/RESET = SubResource( 9 )
