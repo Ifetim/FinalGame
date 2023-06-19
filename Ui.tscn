@@ -27,3 +27,9 @@ margin_right = 40.0
 margin_bottom = 14.0
 rect_scale = Vector2( 2, 2 )
 text = "0"
+
+[node name="Label2" type="Label" parent="."]
+margin_top = 578.0
+margin_right = 62.0
+margin_bottom = 592.0
+text = "Level one"

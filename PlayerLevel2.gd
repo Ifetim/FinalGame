@@ -13,7 +13,7 @@ var potionTimer = Timer.new()
 var health = 100 
 var playerScore = 0 
 
-onready var healthBar := get_node("/root/Level2/CanvasLayer/ProgressBar")
+onready var healthBar := get_node("/root/Level2/CanvasLayer3/ProgressBar")
 onready var enemy := get_node("/root/Level2/Enemy")
 var enemyGroup = []
 
@@ -35,7 +35,7 @@ const DIRECTION_TO_FRAME := {
 	}
 
 onready var sprite := $Godot
-onready var label := get_node("/root/Level2/CanvasLayer/Label")
+onready var label := get_node("/root/Level2/CanvasLayer3/Label")
 
 var enemyTouchTimer = Timer.new()
 const ENEMY_TOUCH_DAMAGE_INTERVAL = 1.0
@@ -138,7 +138,7 @@ func kill():
 func _on_Area2D_body_entered(body):
 	print(body)
 	if body.is_in_group("enemies"):
-		health -= 5
+		health -= 10
 		update_health_bar()
 	if health <= 0:
 		kill()

@@ -10,7 +10,7 @@ func _ready() -> void:
 	finish_area.connect("body_entered", self, "_on_FinishLine_body_entered")
 	
 	labelTimer = Timer.new()
-	labelTimer.wait_time = 3.0
+	labelTimer.wait_time = 2.0
 	labelTimer.one_shot = true
 	labelTimer.connect("timeout", self, "_on_LabelTimer_timeout")
 	label.visible = false
@@ -18,7 +18,7 @@ func _ready() -> void:
 	get_tree().get_root().add_child(labelTimer)  # Add the timer to the SceneTree
 	
 	playerTimer = Timer.new()
-	playerTimer.wait_time = 1.0
+	playerTimer.wait_time = 0.5
 	playerTimer.one_shot = true
 	playerTimer.connect("timeout", self, "_on_PlayerTimer_timeout")
 	add_child(playerTimer)

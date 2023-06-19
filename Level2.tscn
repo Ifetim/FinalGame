@@ -294,6 +294,7 @@ anims/RESET = SubResource( 9 )
 [node name="Tilemap" parent="." instance=ExtResource( 2 )]
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="FinishLine" parent="." instance=ExtResource( 9 )]
 position = Vector2( 3681, 2690 )
@@ -301,3 +302,5 @@ scale = Vector2( 1.9, 1 )
 script = ExtResource( 12 )
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 16 )]
+
+[node name="CanvasLayer3" parent="." instance=ExtResource( 4 )]
